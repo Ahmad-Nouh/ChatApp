@@ -1,0 +1,21 @@
+#nav {
+    margin: 0;
+    font-size: 18px;
+}
+
+#nav li{
+    background-color: #163172;
+    transition: 1s; 
+}
+#nav li a{
+    transition: 1s;
+    color: #D6E4F0;
+    cursor: pointer;
+}
+
+#nav li:hover{
+    background-color: #D6E4F0;
+}
+#nav li a:hover{
+    color: #163172;
+}

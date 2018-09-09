@@ -1,0 +1,64 @@
+.modal-body
+{
+    height: 400px;
+    overflow: auto;
+}
+
+.friend{
+    overflow: hidden;
+    background-color: #EFEFEF;
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.friend > div {
+    float: left;
+}
+.friend h5 , span {
+    display: inline-block;
+    font-size: 18px
+}
+
+.photo{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.details{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.status{
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+#contact
+{
+    position: absolute;
+    left: 85%;
+    top: 80%;
+    border-radius: 100%;
+    font-size: 36px;
+    width: 65px;
+    height: 65px;
+}
+
+@media screen and (max-width : 500px){
+    #contact {
+        left: 80%;
+        top: 85%;
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -1,0 +1,21 @@
+.container{
+    height: 110%;
+    margin-top: 10px;
+    background-color: #FFF;
+    padding: 0;
+    box-shadow:  10px 10px 5px 5px rgb(243, 243, 243);
+    border: 2px solid #DDD;
+    overflow: hidden;
+    position: relative;
+}
+
+#logout
+{
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    top: 100%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+}

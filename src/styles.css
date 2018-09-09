@@ -1,0 +1,190 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('./assets/fontawesome/css/fontawesome-all.css');
+@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html {
+    height: 100%;
+}
+body{
+    height: 90%;
+    background-color: #EFEFEF;
+    background-image: url('./assets/images/backgroud.png');
+}
+
+
+#search{
+    width: 90%;
+    margin: 2% 5%;
+}
+
+h5{
+    margin: 1% 5%; 
+}
+
+#results{
+    width: 95%;
+    height: 67%;
+    margin: 1% 5%;
+    background-color:#FFF;
+    border: solid 1px #CCC;
+    padding: 10px;
+    overflow: auto;
+}
+
+
+.friend{
+    overflow: hidden;
+    background-color: #EFEFEF;
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.friend > div {
+    float: left;
+}
+.friend h5 , span {
+    display: inline-block;
+    font-size: 18px
+}
+
+.photo{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.details{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+.ActiveButton
+{
+    background-color: #D6E4F0;
+    color: #163172
+}
+
+#gameAlert
+{
+    position: fixed;
+    width: 400px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px; /* Negative half of height. */
+    margin-left: -200px; /* Negative half of width. */
+    padding: 10px;
+    background-color: #444;
+    color: #FFF;
+    border-radius: 3%;
+    z-index: 100;
+    display: none;
+}
+
+#gameAlert button
+{
+    margin: 10px;
+}
+
+#cover
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+
+/* selector */
+.section{
+	background-color:  #FFF;
+	height: 25vh;
+    line-height: 130px;
+    position: fixed;
+    left: 50%;
+    top: 45%;
+}
+
+.loader {
+  display: inline-block;
+  height: 50px;
+  position: fixed;
+  left: 48%;
+  top: 45%;
+  vertical-align: middle;
+  width: 50px;
+}
+
+.loader-double{
+	animation-name: spin;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	border: 5px solid #D6E4F0;
+	border-bottom-color: #163172;
+	border-radius: 50%;
+	border-top-color: #163172;
+}
+
+.loader-double::after{
+	border-radius: 50%;
+	border: 5px solid #163172;
+	border-top-color: #D6E4F0;
+	border-bottom-color: #D6E4F0;
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 10px; 
+	right: 10px;
+	bottom:10px;
+	animation-name: spin;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction: reverse;
+}
+
+.time{
+    color : #CCC;
+    font-size: 12px;
+    text-align: right;
+    margin: 10xp;
+}
+
+@keyframes petitsBatons {
+	0%{
+		transform: scaleY(0);
+		opacity: 0;
+	}
+	50%{
+		transform: scaleY(1);
+		opacity: 1;
+	}
+	100%{
+		transform: scaleY(0);
+		opacity: 0;
+	}
+}
+
+@keyframes spin{
+	from{
+		transform: rotate(0deg);
+	}to{
+		transform: rotate(360deg);
+	}
+}

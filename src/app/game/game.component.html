@@ -1,0 +1,6 @@
+<h2>{{gameName}}</h2>
+
+<div [ngSwitch]="gameName">
+  <app-tic-tac-toe *ngSwitchCase = "'tic-tac-toe'"></app-tic-tac-toe>
+  <div *ngSwitchDefault>Not Found</div>
+</div>

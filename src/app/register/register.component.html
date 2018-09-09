@@ -1,0 +1,76 @@
+<form [formGroup]="form" #user="ngForm" (ngSubmit)="PostUser(user)" method="POST">
+    <fieldset>
+      <legend>Register</legend>
+      <div class="form-group row">
+        <div class="name">
+          <label for="firstname">First Name</label>
+          <input type="text" class="form-control" 
+                  id="firstname"
+                  placeholder="Enter firstname"
+                  name="firstname"
+                  formControlName = "firstname"
+                  ngModel
+                  name="firstname"
+                  >
+          <div class="alert alert-danger" *ngIf="firstname.touched && firstname.invalid">
+            <div *ngIf="firstname.errors.required">firstname is required</div>
+            <div *ngIf="firstname.errors.containNumbersOrSymbols">firstname should not have number or symbols</div>
+            <div *ngIf="firstname.errors.cannotContainSpace">firstname should not has spaces</div>
+          </div>
+        </div>
+        <div class="name">
+          <label for="lastname">Last Name</label>
+          <input type="text" class="form-control"
+                  id="lastname"
+                  placeholder="Enter lastname"
+                  name="lastname"
+                  formControlName = "lastname"
+                  ngModel
+                  name="lastname"
+                  >
+          <div class="alert alert-danger" *ngIf="lastname.touched && lastname.invalid">
+            <div *ngIf="lastname.errors.required">lastname is required</div>
+            <div *ngIf="lastname.errors.containNumbersOrSymbols">lastname should not have number or symbols</div>
+            <div *ngIf="lastname.errors.cannotContainSpace">lastname should not has spaces</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text"
+                class="form-control" 
+                id="username"
+                placeholder="Enter username"
+                name="username"
+                formControlName = "username"
+                ngModel
+                name="username"
+                >
+        <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
+            <div *ngIf="username.errors.cannotContainSpace">username should not has spaces</div>
+            <div *ngIf="username.errors.required">username is required</div>
+            <div *ngIf="username.errors.beginWithNumber">username should not starts with number</div>
+            <div *ngIf="username.errors.minlength">username should contains {{username.errors.minlength.requiredLength}} characters at least</div>
+            <div *ngIf="username.errors.containSymbols">username should not contains symbols like (-*%$@!/)</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password"
+                class="form-control"
+                id="password" 
+                placeholder="Password"
+                name="password"
+                formControlName = "password"
+                ngModel
+                name="password"
+                >
+        <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+            <div *ngIf="password.errors.required">password is required</div>
+            <div *ngIf="password.errors.cannotContainSpace">password should not have spaces</div>
+            <div *ngIf="password.errors.minlength">password should contains {{password.errors.minlength.requiredLength}} characters at least</div>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-primary" [disabled] = 'form.invalid'>Submit</button>
+    </fieldset>
+</form>

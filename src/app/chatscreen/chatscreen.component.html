@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div id="navbar">
+  <h4 id="name">{{friendname}}</h4>
+  <div class="state">
+    <p *ngIf="status else offline">online</p>
+    <ng-template #offline>last seen 3:00</ng-template>
+  </div>
+  <button id="block" type="button" class="btn btn-danger" #Block (click)="block(Block)">Block</button>
+</div>
+<div id="chatscreen" #scrollMe [scrollTop]="scrollMe.scrollHeight" (scroll)="onScroll($event);">
+  
+</div>
+<form #form="ngForm" (ngSubmit)="sendMessage(form);" id="messagebox">
+  <input [(ngModel)]="messagebox" (onkeyup.enter)="ngSubmit.emit()"
+          type="text" name="message"
+          class="form-control" id="chatbox" 
+          autocomplete="off"
+          placeholder="Enter your message here.."
+          >
+  <button type="button" id="emoji-picker" class="chat-input-tool">
+    <i class="fas fa-smile"></i>
+  </button>
+  <app-inputbox></app-inputbox>
+  <button type="submit" id="send"><i class="fa fa-paper-plane"></i></button>
+  <br>
+  
+  <!-- <label for="upload-image" class="input-label"> <i class="fa fa-image"></i> Send Image</label>
+  <input type="file" id="upload-image" (change)="onImageChange($event)" accept="image/*" data-toggle="modal" data-target="#exampleModalCenter"> -->
+
+  <label for="upload" class="btn btn-secondary" id="uploadFile"> <i class="fas fa-cloud-upload-alt"></i></label>
+  <input type="file" id="upload" (change)="onFileChange($event)" data-toggle="modal" data-target="#exampleModalCenter">
+  <app-games></app-games>
+  <button class="btn btn-danger" id="clear" (click)="clearHistory()">clear chat</button>
+  <button class="btn btn-primary" id="e2ee" (click)="startE2EE()">E2EE chat</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">{{fileURL}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img id="imagePreview" *ngIf="image_sent" [src]="sanitizer.bypassSecurityTrustUrl(image_sent)">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="sendFile();">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

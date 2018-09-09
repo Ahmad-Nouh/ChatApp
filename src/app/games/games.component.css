@@ -1,0 +1,42 @@
+#game{
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0
+}
+.game{
+    background-color: #F6F6F6;
+    color: #444;
+    padding: 5px;
+}
+
+.game h6 {
+    display: inline;
+    height: 40px;
+    margin-right: 5%;
+}
+
+.game button {
+    display: inline;
+    background-color: #1E56A0;
+    color: #D6E4F0;
+    font-weight: bold;
+    border: none;
+    width: 60px;
+    height: 40px;
+}
+
+.game button:hover{
+    background-color: #D6E4F0;
+    color: #1E56A0;
+    cursor: pointer;
+}
+
+.icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 45%
+}

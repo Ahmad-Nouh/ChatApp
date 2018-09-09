@@ -1,0 +1,21 @@
+<div class="container col-md-8">
+    <router-outlet></router-outlet>
+</div>
+
+<div id="cover"></div>
+
+<div id="gameAlert" role="alert">
+    <a href="" data-dismiss="alert">&times;</a>
+    <strong>Message</strong>
+    <p>
+        Your friend sent you a request to play <strong>Tic Tac Toe</strong> with him
+        Do you want to play with him ?
+    </p>
+    <button class="btn btn-primary" 
+            onclick="$('#cover').css('display','none');
+                    $('#gameAlert').css('display','none');">No</button>
+    <button id="accept" class="btn btn-primary" 
+        onclick="$('#cover').css('display','none'); $('#gameAlert').css('display','none');">
+            Yes
+    </button>
+</div>

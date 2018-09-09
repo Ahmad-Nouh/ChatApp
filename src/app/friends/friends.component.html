@@ -1,0 +1,27 @@
+<!-- friends Modal -->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Select Contact</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <a *ngFor="let friend of friends" (click)="d('Cross click'); NewChat(friend);" routerLink = "/{{user.username}}/chats/{{friend}}">
+      <div class="friend">
+        <div class="photo" style="background-image: url('../../assets/images/image1.jpg')"></div>
+          <div class="details">
+            <h5>{{friend}}</h5>
+            <span class="status"></span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-secondary" id="contact" (click)="open(content)"><i class="fas fa-address-book"></i></button>
+<!--/////////////////////////////////////////////////////////////////////////////////////////-->

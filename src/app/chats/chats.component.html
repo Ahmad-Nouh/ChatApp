@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-friends></app-friends>
+
+<button id="groubBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#group">
+  <i class="fa fa-users"></i>
+</button>
+
+<!-- modal group -->
+<div class="modal fade" id="group" tabindex="-1" role="dialog" aria-labelledby="group" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Create Group &nbsp;&nbsp;<i class="fa fa-users"></i></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>Choose group image..</h6>
+        <div id="image_container">
+            <div id="groupImage" class="img-thumbnail rounded-circle"></div>
+            <input type='file' id="imageUpload" (change)="onFileChange($event)" accept=".png, .jpg, .jpeg"/>
+            <label for="imageUpload" class="btn btn-success">choose a photo <i class="fas fa-pen"></i></label>
+        </div>
+    
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
+          <!-- multiple select -->
+          <!-- <a *ngFor="let friend of friends" (click)="d('Cross click')" routerLink = "/{{user.username}}/chats/{{friend}}">
+            <div class="friend">
+              <div class="photo" style="background-image: url('../../assets/images/image1.jpg')"></div>
+                <div class="details">
+                  <h5>{{friend}}</h5>
+              </div>
+            </div>
+          </a> -->
+
+          <a (click)="selectUser($event)">
+            <div class="query">
+              <div class="photo" style="background-image: url('../../assets/images/image1.jpg')"></div>
+                <div class="details">
+                  <h5>ahmad</h5>
+                </div>
+            </div>
+            <input class="hide" type="checkbox" value="ahmad">
+          </a>
+
+          <a (click)="selectUser($event)">
+            <div class="query">
+              <div class="photo" style="background-image: url('../../assets/images/image1.jpg')"></div>
+                <div class="details">
+                  <h5>base</h5>
+              </div>
+            </div>
+            <input class="hide" type="checkbox" value="base">
+          </a>
+
+          <a (click)="selectUser($event)">
+            <div class="query">
+              <div class="photo" style="background-image: url('../../assets/images/image1.jpg')"></div>
+                <div class="details">
+                  <h5>nour</h5>
+                </div>
+            </div>
+            <input class="hide" type="checkbox" value="base">
+          </a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="reset()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="creatGroup()">Save changes</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+<a *ngFor="let chat of chats" routerLink = "/{{user.username}}/chats/{{chat}}">
+  <div class="friend">
+    <div class="photo" style="background-image: url('../../assets/images/image1.jpg')"></div>
+      <div class="details">
+        <h5>{{chat}}</h5>
+        <span class="status"></span>
+      </div>
+  </div>
+</a>

@@ -1,0 +1,169 @@
+
+#navbar{
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 3%;
+    background-color:#1E56A0;
+    color: #D6E4F0;
+    padding: 5px;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+#navbar > .state{
+    font-size: 12px;
+    float: left;
+    margin: 15px 5px;
+    margin-bottom: 0;
+}
+
+#navbar > h4 {
+    float: left;
+}
+
+
+#chatscreen {
+    width: 90%;
+    margin: 0 5%;
+    padding: 10px 0;
+    min-height: 400px;
+    max-height: 400px;
+    background-color: #F6f6f6;
+    overflow: auto;
+}
+
+#messagebox{
+    width: 90%;
+    margin: 0 5%;
+    margin-bottom: 5%;
+}
+.status{
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+#messagebox input[type="text"]{
+    display: block;
+    float: left;
+    width: 80%;
+    border-radius: 0px;
+}
+
+/* #messagebox > button {
+    display: block;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 6px;
+    
+    width: 9%;
+    background-color: #1E56A0;
+    color: #D6E4F0;
+    border: none;
+    transition: 1s;
+    margin-left: 1px;
+    cursor: pointer;
+} */
+
+/* #messagebox > button:hover {
+    color: #1E56A0;
+    background-color: #D6E4F0;
+} */
+
+#send,#emoji-picker{
+    display: block;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 6px;
+    width: 9%;
+    background-color: #1E56A0;
+    color: #D6E4F0;
+    border: none;
+    transition: 1s;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+#emoji-picker:hover{
+    color: #1E56A0;
+    background-color: #D6E4F0;
+}
+
+#send:hover{
+    color: #1E56A0;
+    background-color: #D6E4F0;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* form .btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+} */
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#upload , #upload-image
+{
+    display: none;
+}
+
+#imagePreview
+{
+    width: 100%;
+    z-index: 100;
+}
+
+.modal-body{
+    min-height: 100px;
+}
+.input-label
+{
+    cursor: pointer;
+    background-color: #444;
+    color: #FFF;
+    padding: 5px;
+    font-weight: bold
+}
+
+#block{
+    display: block;
+    float: right
+}
+
+#uploadFile{
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 7px;
+    text-align: center;
+    padding: 5px
+}
+
+@media screen and (max-width : 500px){
+    #messagebox button {
+        width: 18%;
+    }
+}

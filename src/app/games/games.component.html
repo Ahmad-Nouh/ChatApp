@@ -1,0 +1,20 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Select Game</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="game" name="tic-tac-toe">
+      <h6>Tic Tac Toe</h6>
+      <img class="icon" src="../../assets/images/Tic Tac Toe.png" alt="">
+      <button (click)="d('Cross click'); sendGameRequest();" routerLink ="/{{user.username}}/game/tic-tac-toe/{{friend}}">play</button>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-success" id="game" (click)="open(content)"><i class="fas fa-gamepad"></i></button>

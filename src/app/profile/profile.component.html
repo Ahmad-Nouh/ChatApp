@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="profile">
+  <div class="cover">
+    <div class="image img-responsive" id="image" style="background-image: url('../../assets/images/image1.jpg')">
+      <label for="imageUpload" class="btn btn-success"><i class="fas fa-pencil-alt"></i></label>
+      <input type='file' id="imageUpload" (change)="onFileChange($event)" accept=".png, .jpg, .jpeg"/>
+    </div>
+  </div>
+  <div id="content">
+      <ul>
+        <li><h6>Name : <strong>Mark Jason</strong></h6></li>
+        <li><h6>Username : <strong>Mark_Js</strong></h6></li>
+        <li><h6>Phone Number : <strong>+001321312</strong></h6></li>
+        <li><h6>Status : <strong>online</strong></h6></li>
+      </ul>
+      <button id="save" class="btn btn-success" (click)="save()">save changes</button>
+  </div>
+</div>

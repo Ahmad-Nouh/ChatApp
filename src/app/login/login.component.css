@@ -1,0 +1,28 @@
+form{
+    margin: 4%;
+}
+
+fieldset {
+    background-color: #f6f6f6;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 1px solid #DDD;
+    padding: 1%;
+}
+
+fieldset div , button{
+    margin-left: 2%;
+}
+
+
+fieldset button{
+    margin-bottom: 2%;
+}
+legend {
+    width: auto;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    padding: 5px;
+    margin-left: 2%;
+    color: #4e4e4e
+}

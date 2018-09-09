@@ -1,0 +1,14 @@
+<ul class="nav nav-pills nav-fill" id="nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/{{ user }}/chats">Chats &nbsp;&nbsp; <i class="fa fa-users"></i></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/{{ user }}/profile">Profile &nbsp;&nbsp; <i class="fa fa-user-circle"></i></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/{{ user }}/search">Search &nbsp;&nbsp; <i class="fa fa-search"></i></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="LogOut();">LogOut &nbsp;&nbsp; <i class="fas fa-sign-out-alt"></i></a>
+    </li>
+</ul>
